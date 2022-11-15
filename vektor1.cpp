@@ -1,3 +1,6 @@
+// VECTOR CPP PROGRAM
+// AUTHOR : MUHAMMAD MAULANA HIKAM
+
 #include<iostream>
 #include<conio.h>
 #include<vector>
