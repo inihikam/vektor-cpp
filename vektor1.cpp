@@ -9,7 +9,7 @@ using namespace std;
 vector<int> V;				/*Variabel V - Vector, Untuk Menampung Sebuah Angka*/
 
 int main(){
-	int pilih, pos, data;
+	int pilih, pos, data, choose;
 	do
 	{
 		system("cls");
@@ -38,13 +38,40 @@ int main(){
 		}
 		if (pilih == 3){
 			cout << "Masukkan data : ";cin>>data;
-			cout << "\nMasukkan data pada posisi ke-";cin>>pos;
-			if (pos > V.size()){
-				cout << "Maaf posisi melewati akhir data!\n";
+			cout << "Pilih tipe insert :\n";
+			cout << "1. Insert After\n";
+			cout << "2. Insert Before\n";
+			cout << "Pilih : ";cin >> choose;
+			
+			if (choose == 1){
+				bool sukses = false;
+				cout << "\nMasukkan data setelah data : ";cin>>pos;
+				for (int i = 0; i < V.size(); i++){
+					if (pos == V[i]){
+						V.insert(V.begin() + (i+1), data);
+						cout << "Data berhasil masuk\n";
+						sukses = true;
+					}
+				}
+				if (sukses == false){
+					cout << "Data yang dicari tidak ada!\n"; 
+				}
 				getch();
-			} else {
-				V.insert(V.begin() + (pos-1), data);
-				cout << "Data berhasil masuk\n";
+			}
+			if (choose == 2){
+				bool sukses = false;
+				cout << "\nMasukkan data sebelum data : ";cin>>pos;
+				for (int i = 0; i < V.size(); i++){
+					if (pos == V[i]){
+						V.insert(V.begin() + (i), data);
+						cout << "Data berhasil masuk\n";
+						sukses = true;
+						break;
+					}
+				}
+				if (sukses == false){
+					cout << "Data yang dicari tidak ada!\n"; 
+				}
 				getch();
 			}
 		}
