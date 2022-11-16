@@ -71,11 +71,10 @@ int main(){
 		}
 		if (pilih == 7){
 			for (int i = 0; i < V.size(); i++){
-				cout << i+1 << V[i] << "\n";
+				cout << i+1 << ". " << V[i] << "\n";
 			}
 			getch();
 		}
-		
 	}
 	while(pilih!=9);
 	return 0;
