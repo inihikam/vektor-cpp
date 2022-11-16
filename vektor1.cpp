@@ -1,6 +1,7 @@
 // VECTOR CPP PROGRAM
 // AUTHOR : MUHAMMAD MAULANA HIKAM
 
+#include<bits/stdc++.h>
 #include<iostream>
 #include<conio.h>
 #include<vector>
@@ -21,6 +22,7 @@ int main(){
 		cout<<"5. Menghapus Data DiBelakang"<<endl;	
 		cout<<"6. Menghapus Data DiTengah"<<endl;	
 		cout<<"7. Menampilkan Data"<<endl;
+		cout<<"8. Mengurutkan Data"<<endl;
 		cout<<"9. Keluar"<<endl;
 		cout<<"Pilihan Anda [1-9] : ";cin>>pilih;
 
@@ -106,6 +108,21 @@ int main(){
 			}
 			getch();
 		}
+		if (pilih == 8){
+			cout << "Pilih tipe sorting :\n";
+			cout << "1. Ascending\n";
+			cout << "2. Descending\n";
+			cout << "Pilih : ";cin >> choose;
+			if (choose == 1){
+				sort(V.begin(), V.end());
+				cout << "Data berhasil diurutkan!\n";
+			} else {
+				sort(V.begin(), V.end(), greater<int>());
+				cout << "Data berhasil diurutkan!\n";
+			}
+			getch();
+		}
+		
 	}
 	while(pilih!=9);
 	return 0;
