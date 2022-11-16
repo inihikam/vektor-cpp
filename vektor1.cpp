@@ -59,15 +59,19 @@ int main(){
 			getch();
 		}
 		if (pilih == 6){
-			cout << "Masukkan posisi data yang ingin dihapus : ";cin>>pos;
-			if (pos > V.size()){
-				cout << "Maaf posisi data melewati batas akhir!";
-				getch();
-			} else {
-				V.erase(V.begin() + (pos-1));
-				cout << "Data berhasil dihapus!";
-				getch();
+			bool sukses = false;
+			cout << "Masukkan data yang ingin dihapus : ";cin>>pos;
+			for (int i = 0; i < V.size(); i++){
+				if (pos == V[i]){
+					cout << "Data " << V[i] << " Berhasil terhapus!\n";
+					V.erase(V.begin() + i);
+					sukses = true;
+				}
 			}
+			if (sukses == false){
+				cout << "Sorry data not found!\n";
+			}
+			getch();
 		}
 		if (pilih == 7){
 			for (int i = 0; i < V.size(); i++){
